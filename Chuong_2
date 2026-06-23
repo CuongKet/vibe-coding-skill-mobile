@@ -1,0 +1,48 @@
+CHƯƠNG 2: CƠ SỞ LÝ THUYẾT
+2.1. AI Coding Assistants
+Trợ lý AI trong lập trình là các công cụ phần mềm sử dụng Trí tuệ Nhân tạo, đặc biệt là các Mô hình Ngôn ngữ Lớn (LLMs), để hỗ trợ nhà phát triển phần mềm. Các công cụ này được huấn luyện trên lượng dữ liệu khổng lồ bao gồm mã nguồn mở, tài liệu kỹ thuật, diễn đàn lập trình (như StackOverflow, GitHub).
+Sự phát triển của AI Coding Assistant đã trải qua nhiều giai đoạn:
+•	Giai đoạn 1 (Autocomplete): Hoàn thiện cú pháp cơ bản (ví dụ: Tabnine, IntelliSense).
+•	Giai đoạn 2 (Context-Aware): Gợi ý toàn bộ hàm hoặc khối lệnh dựa trên bối cảnh của file hiện tại (ví dụ: GitHub Copilot đời đầu).
+•	Giai đoạn 3 (Agentic & Vibe Coding): AI có khả năng đọc hiểu toàn bộ dự án (Codebase), tự động viết code, sửa lỗi, và thiết kế cấu trúc từ các mô tả bằng ngôn ngữ tự nhiên thông qua các công cụ như Cursor, GitHub Copilot....
+2.2. Phương pháp "Vibe Coding" trong phát triển phần mềm
+Vibe Coding là một thuật ngữ mới nổi trong cộng đồng công nghệ, ám chỉ một phong cách lập trình nơi con người không trực tiếp gõ từng dòng mã. Thay vào đó, lập trình viên tập trung vào việc mô tả ý tưởng, thiết kế luồng logic, và "truyền đạt cảm hứng/yêu cầu" (the vibe) thông qua ngôn ngữ tự nhiên cho các công cụ AI (như Cursor, ChatGPT). AI sẽ chịu trách nhiệm chuyển đổi những yêu cầu này thành mã nguồn thực thi.
+Đặc điểm của Vibe Coding:
+•	Prompt-Driven (Dẫn dắt bằng câu lệnh): Kỹ năng quan trọng nhất của lập trình viên chuyển từ viết mã sang viết Prompt.
+•	Quy trình lặp lại: Lập trình viên yêu cầu -> AI sinh mã -> Lập trình viên kiểm tra -> Cung cấp phản hồi -> AI sửa lại.
+•	Kiến trúc thượng tầng: Lập trình viên đóng vai trò như một người Quản lý Dự án hoặc Kiến trúc sư, trong khi AI đóng vai trò là Lập trình viên thực thi.
+2.3. Tổng quan về phát triển ứng dụng di động với Flutter
+Flutter là một UI framework mã nguồn mở do Google tạo ra, cho phép phát triển các ứng dụng biên dịch tự nhiên cho thiết bị di động, web và desktop từ một bộ mã nguồn duy nhất, sử dụng ngôn ngữ lập trình Dart.
+Tại sao chọn Flutter cho nghiên cứu đánh giá AI?
+1.	Giao diện khai báo: Flutter xây dựng UI dựa trên cây Widget. Cấu trúc này rất logic và theo cấu trúc lồng nhau, rất phù hợp với khả năng sinh mã của các mô hình ngôn ngữ lớn.
+2.	Hệ sinh thái đồng nhất: Flutter có cách quản lý State, định tuyến và UI rõ ràng, giúp dễ dàng thiết kế các bài thực nghiệm để chấm điểm kiến trúc và mã nguồn do AI tạo ra.
+3.  Hiện tại, tác giả đang sử dụng Flutter trong công việc hàng ngày, do đó, có nhiều không gian và thời gian để đánh giá chất lượng.
+2.4. Khung kỹ năng của AI trong Mobile Development
+Để đánh giá năng lực của AI dưới vai trò một Mobile Developer, nghiên cứu xây dựng một bộ khung kỹ năng gồm 16 kỹ năng, được phân loại thành 4 nhóm chính:
+2.4.1. Nhóm Development (Phát triển cốt lõi)
+•	Code Generation (Sinh mã nguồn): Khả năng tạo ra các đoạn code Dart/Flutter từ yêu cầu tự nhiên, đảm bảo đúng cú pháp và logic.
+•	Debugging (Gỡ lỗi): Khả năng phân tích stack trace, thông báo lỗi từ console và đưa ra giải pháp sửa lỗi chính xác.
+•	Refactoring (Tái cấu trúc mã): Khả năng làm sạch mã (clean code), tách Widget, giảm sự trùng lặp và tuân thủ nguyên tắc SOLID.
+2.4.2. Nhóm UI/UX (Giao diện và Trải nghiệm)
+•	UI Generation (Sinh giao diện): Khả năng xây dựng màn hình UI dựa trên mô tả văn bản (Text-to-UI).
+•	UI-to-Code: Khả năng chuyển đổi từ bản thiết kế (hình ảnh tĩnh hoặc Figma) thành mã nguồn Flutter.
+•	UX Suggestion (Đề xuất trải nghiệm): Khả năng đưa ra lời khuyên về hiệu ứng (animation), phản hồi tương tác, bố cục để tăng tính thân thiện cho người dùng.
+2.4.3. Nhóm Architecture & Engineering (Kiến trúc và Kỹ thuật phần mềm)
+•	Architecture Design (Thiết kế kiến trúc): Đề xuất và xây dựng cấu trúc thư mục (MVC, MVVM, Clean Architecture).
+•	State Management Design: Lựa chọn và triển khai các giải pháp quản lý trạng thái phù hợp (Provider, Riverpod, Bloc, GetX).
+•	Database Design: Thiết kế schema và truy vấn cho cơ sở dữ liệu cục bộ (SQLite, Hive, Isar).
+•	API Integration (Tích hợp API): Khả năng định nghĩa Model (từ JSON), viết các lớp Service gọi RESTful API.
+•	Testing: Khả năng sinh các bài kiểm thử tự động (Unit Test, Widget Test, Integration Test).
+•	Performance Optimization (Tối ưu hiệu năng): Giảm thiểu rebuild UI không cần thiết, tối ưu hóa bộ nhớ và hình ảnh.
+•	Security Analysis (Phân tích bảo mật): Phát hiện lỗ hổng lưu trữ dữ liệu nhạy cảm, mã hóa dữ liệu.
+2.4.4. Nhóm Product & Analysis (Sản phẩm và Phân tích)
+•	Requirement Analysis (Phân tích yêu cầu): Khả năng chia nhỏ tính năng lớn thành các task nhỏ để thực thi.
+•	Documentation Understanding (Đọc hiểu tài liệu): Khả năng cập nhật nhanh các package mới từ pub.dev hoặc tài liệu API của bên thứ ba.
+•	Product Thinking (Tư duy sản phẩm): Khả năng đóng góp ý kiến về luồng nghiệp vụ và tính năng bổ sung.
+2.5. Các mô hình cộng tác Human-AI (Human-AI Collaboration Models)
+Đề tài ứng dụng và đánh giá mức độ hiệu quả thông qua các cấp độ cộng tác giữa Lập trình viên và AI:
+1.	AI đóng vai trò Trợ lý: AI chỉ trả lời câu hỏi và gợi ý các hàm nhỏ. Con người kiểm soát 90% công việc.
+2.	AI đóng vai trò Lập trình cặp: Theo mô hình Vibe Coding, AI viết phần lớn logic hiển thị và boilerplate code. Con người review và điều hướng kiến trúc.
+3.	AI đóng vai trò Agent: AI tự động lên kế hoạch, viết code, chạy thử và sửa lỗi, con người chỉ đóng vai trò người phê duyệt cuối cùng.
+Nghiên cứu sẽ thông qua kết quả thực nghiệm để kết luận xem kỹ năng nào phù hợp với cấp độ cộng tác nào trong ba mô hình trên.
+
