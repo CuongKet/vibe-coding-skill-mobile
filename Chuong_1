@@ -1,0 +1,52 @@
+CHƯƠNG 1: GIỚI THIỆU
+
+1.1. Đặt vấn đề
+
+Sự bùng nổ của Trí tuệ Nhân tạo tạo sinh cùng các Mô hình Ngôn ngữ Lớn (LLMs) như GPT-4, Claude 3.5 Sonnet, hay Gemini đã mở ra một kỷ nguyên mới trong lĩnh vực phát triển phần mềm. AI không còn dừng lại ở mức độ gợi ý code đơn thuần mà đã tiến tới khả năng lên kế hoạch phát triển, tạo ra toàn bộ cấu trúc dự án, thiết kế giao diện, giải quyết lỗi và thậm chí tham gia vào quá trình tư duy sản phẩm.
+
+Trong bối cảnh hiện nay, khái niệm "Vibe Coding" nổi lên như một phương pháp phát triển phần mềm hiện đại, nơi lập trình viên tương tác với AI chủ yếu qua ngôn ngữ tự nhiên để định hướng code thay vì viết từng dòng code truyền thống. Tuy nhiên, sự xuất hiện của phương pháp này đặt ra một câu hỏi lớn đối với ngành lập trình ứng dụng di động: AI thực sự đã tiến xa đến đâu trong việc thay thế hoặc hỗ trợ một lập trình viên di động?
+
+Mặc dù có AI có thể tham gia vào quá trình phát triển sản phẩm, nhưng chưa có nhiều nghiên cứu đánh giá một cách có hệ thống, định lượng và phân chia theo từng kỹ năng cụ thể của một kỹ sư phát triển ứng dụng di động nói chung, và phát triển Flutter nói riêng. Do đó, đề tài: "AI đang sở hữu những kỹ năng nào của một Mobile Developer, mức độ thành thạo ra sao? Khám phá và đánh giá bộ kỹ năng của AI trong phát triển ứng dụng di động theo phương pháp Vibe Coding" được thực hiện nhằm giải quyết khoảng trống này.
+
+1.2. Mục tiêu nghiên cứu
+
+Nghiên cứu khả năng của các mô hình AI (như ChatGPT, Claude, GitHub Copilot/Cursor...) khi tham gia vào quy trình phát triển ứng dụng di động bằng Flutter dưới vai trò một Mobile Developer ảo.
+
+Thông qua các bài thực nghiệm thực tế, đề tài hướng đến:
+
+Xác định các nhóm kỹ năng AI đang sở hữu trong lĩnh vực Mobile Development.
+
+Đánh giá mức độ hiệu quả, điểm mạnh và điểm yếu của từng kỹ năng.
+
+Đề xuất mô hình cộng tác tối ưu giữa con người và AI trong quy trình phát triển ứng dụng di động.
+
+1.3. Câu hỏi nghiên cứu
+
+Nghiên cứu sẽ tập trung trả lời 5 câu hỏi cốt lõi sau:
+
+AI đang sở hữu những nhóm kỹ năng nào trong quá trình phát triển ứng dụng di động?
+
+Mức độ hiệu quả của từng kỹ năng khi AI thực hiện độc lập đạt đến mức nào?
+
+Những kỹ năng nào AI thực hiện tốt hơn, nhanh hơn và tối ưu hơn con người?
+
+Những kỹ năng nào vẫn bộc lộ hạn chế và bắt buộc cần sự can thiệp, giám sát của lập trình viên?
+
+Mô hình Human-AI Collaboration nào là phù hợp và tối ưu nhất cho Mobile Development hiện nay?
+
+1.4. Đối tượng và phạm vi nghiên cứu
+
+Đối tượng nghiên cứu: Các mô hình Generative AI tiên tiến hiện nay có khả năng hỗ trợ lập trình (ví dụ: GPT-5, Claude 3.5 Sonnet, Gemini 3.0 Pro).
+
+Phạm vi nghiên cứu: 
+Giới hạn trong quá trình phát triển ứng dụng di động sử dụng framework Flutter.
+
+Quá trình tương tác được thực hiện theo phương pháp Vibe Coding (sử dụng prompt/ngôn ngữ tự nhiên để ra lệnh cho AI viết code).
+
+Khảo sát 16 kỹ năng cụ thể, chia làm 4 nhóm chính: Development, UI/UX, Architecture & Engineering, và Product & Analysis.
+
+1.5. Ý nghĩa của đề tài
+
+Về mặt lý luận: Góp phần hệ thống hóa bộ kỹ năng (Skill Framework) của AI trong lập trình Mobile, tạo cơ sở đánh giá năng lực AI cho các nghiên cứu sau này.
+
+Về mặt thực tiễn: Giúp các Mobile Developer hiểu rõ sức mạnh và giới hạn của AI hiện tại. Từ đó, lập trình viên có thể thay đổi phương pháp làm việc, áp dụng mô hình Human-AI Collaboration để tăng năng suất, đồng thời biết cách nâng cấp những kỹ năng (Soft skills, Product thinking) mà AI chưa thể thay thế.
