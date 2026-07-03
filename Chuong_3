@@ -1,0 +1,135 @@
+CHƯƠNG 3: THỰC NGHIỆM VÀ ĐÁNH GIÁ NĂNG LỰC AI
+Trong chương này, thay vì kiểm tra AI qua các bài test rời rạc, nghiên cứu sẽ yêu cầu dựng một dự án từ đầu đến cuối. Bằng cách sử dụng các AI Agent tiên tiến (như Cursor, Gemini Pro, Claude 3.5 Sonnet), giao một yêu cầu phát triển phần mềm hoàn chỉnh bằng ngôn ngữ tự nhiên và quan sát toàn bộ vòng đời AI phân tích, lên kế hoạch và thực thi dự án.
+Từ quá trình thực thi này, nghiên cứu sẽ bóc tách và đánh giá điểm số cho từng kỹ năng cụ thể.
+3.1. Thiết lập kịch bản thực nghiệm
+Dự án yêu cầu: Ứng dụng "Quản lý chi tiêu cá nhân" bằng Flutter: 
+> "Hãy đóng vai trò là một Mobile Developer. Tôi muốn tạo một ứng dụng Flutter quản lý chi tiêu. Ứng dụng có 2 màn hình chính: (1) Dashboard hiển thị tổng chi tiêu, danh sách giao dịch gần đây và một biểu đồ tròn đơn giản. (2) Màn hình thêm giao dịch (nhập số tiền, chọn danh mục, ghi chú). Hãy tự lên kế hoạch chi tiết các bước cần làm, cấu trúc thư mục, và tiến hành viết code từ đầu đến cuối. Sử dụng Material 3, giao diện hiện đại, sạch sẽ. Tự quyết định quản lí trạng thái phù hợp."
+Quá trình AI Agent lên Plan (Kế hoạch thực thi): Ngay sau khi nhận prompt, AI Agent không tự động sinh ra một bản kế hoạch gồm 4 bước:
+1.	Setup dự án & cấu trúc thư mục (screens, widgets, models).
+2.	Xây dựng Data Model (Transaction class).
+3.	Xây dựng UI cho Dashboard.
+4.	Xây dựng UI cho Add Transaction Screen & kết nối Logic.
+3.2. Đánh giá nhóm kỹ năng Development qua quá trình thực thi
+3.2.1. Kỹ năng Code Generation (Sinh mã nguồn)
+•	Quan sát thực thi: Dựa trên Plan, AI Agent tự động tạo file transaction.dart và sinh ra cấu trúc class với đầy đủ properties (id, amount, category, date). Tiếp đó, nó sinh ra hàng trăm dòng code cho logic tính toán tổng chi tiêu và phân loại dữ liệu cho biểu đồ tròn.
+•	Đánh giá: 
+o	AI viết code với tốc độ cực nhanh, cú pháp Dart hoàn toàn chính xác.
+o	Logic gom nhóm dữ liệu (grouping transactions by category) sử dụng thành thạo các hàm fold, where của Dart.
+•	Điểm đánh giá: Tốt
+•	Nhận xét: Khả năng sinh mã logic của AI trong một ngữ cảnh dự án liên tục là rất xuất sắc. Nó ghi nhớ context rất tốt giữa file Model và file UI.
+3.2.2. Kỹ năng Debugging (Gỡ lỗi tự động)
+•	Quan sát thực thi: Trong quá trình render màn hình Dashboard, khi AI đặt biểu đồ và danh sách vào chung một Column, một lỗi của Flutter xuất hiện trên Terminal: RenderFlex overflowed by 250 pixels on the bottom.
+•	Đánh giá: 
+o	Thay vì dừng lại đợi can thiệp, AI Agent  tự động nhận diện lỗi.
+o	Nó tự động đề xuất và thực thi việc sửa lỗi bằng cách bọc ListView trong một Expanded widget, sau đó tự động analyst lại ứng dụng để kiểm tra.
+•	Điểm đánh giá: Tốt
+•	Nhận xét: Khả năng tự động phát hiện và gỡ lỗi hiển thị cơ bản của AI Agent tốt, không cần đến thao tác của con người.
+3.2.3. Kỹ năng Refactoring (Tái cấu trúc mã)
+•	Quan sát thực thi: Ban đầu, AI cho toàn bộ UI của màn hình Dashboard (Header, Biểu đồ, Danh sách) vào một file dashboard_screen.dart dài gần 400 dòng. Khi được con người prompt thêm: "Tối ưu lại file cho gọn và sạch".
+•	Đánh giá: 
+o	 AI tách file này thành 3 file riêng biệt trong thư mục widgets/: summary_card.dart, expense_chart.dart, recent_transactions.dart.
+o	Nó truyền các tham số cần thiết qua Constructor của các widget mới một cách chính xác.
+•	Điểm đánh giá: Tốt
+•	Nhận xét: Mặc dù AI ban đầu có xu hướng viết "Spaghetti code" để giải quyết nhanh bài toán, nhưng khi được yêu cầu Refactor, nó thực hiện việc bóc tách component trong Flutter chính xác và an toàn.
+3.3. Đánh giá nhóm kỹ năng UI/UX qua quá trình thực thi
+3.3.1. Kỹ năng UI Generation (Sinh giao diện từ Text)
+•	Quan sát thực thi: Dựa trên yêu cầu "giao diện hiện đại, trực quan", AI Agent thiết kế màn hình Dashboard sử dụng Card widget có bo góc, có đổ bóng nhẹ.
+•	Đánh giá: 
+o	Bố cục (Layout) chuẩn xác, không bị xô lệch. Cấu trúc cây widget hợp lý.
+o	Tuy nhiên, màu sắc được AI chọn mặc định thường là các màu cơ bản của Material (Xanh dương, Trắng). Thiếu sự phân cấp màu sắc tinh tế, padding đôi khi quá sát hoặc quá rộng. Giao diện trông giống một bản "Wireframe" hoạt động được hơn là một sản phẩm thương mại.
+•	Điểm đánh giá: Bình thường
+•	Nhận xét: AI làm rất tốt phần cấu trúc UI, nhưng phần thẩm mỹ thì chỉ đạt mức trung bình. Vẫn cần Mobile Developer điều chỉnh lại thông số về Typography và Color Palette.
+3.3.2. Kỹ năng UI-to-Code 
+•	Quan sát thực thi: Tại màn hình "Add Transaction", thay vì để AI tự nghĩ, người giám sát cung cấp một bức ảnh chụp thiết kế có một Input Text lớn hiển thị số tiền ở giữa màn hình và bàn phím số custom bên dưới.
+•	Đánh giá:  
+o	AI nhận diện đúng layout: Phía trên là vùng hiển thị số, phía dưới là GridView cho Numpad.
+o	Hạn chế: AI gặp khó khăn trong việc thiết lập chính xác kích thước font chữ (FontSize) và khoảng cách theo tỷ lệ của bức ảnh. Nút "Save" ở ảnh mockup có viền gradient, nhưng AI chỉ sinh ra một nút màu solid bình thường.
+•	Điểm đánh giá: Bình thường
+•	Nhận xét: Kỹ năng này giúp lập trình viên tiết kiệm việc gõ khung giao diện, nhưng để ứng dụng đạt mức Pixel-Perfect so với thiết kế của Designer, con người phải can thiệp sửa đổi khoảng 30-40% mã UI do AI sinh ra.
+3.3.3. Kỹ năng UX Suggestion (Đề xuất trải nghiệm)
+•	Quan sát thực thi: Sau khi hoàn thành chức năng thêm giao dịch, AI Agent tự động ghi chú vào log: "Tôi đã thêm một SnackBar hiện lên báo 'Thêm thành công' và tự động pop() quay lại màn hình trước đó để flow người dùng không bị nghẽn".
+•	Đánh giá: * 
+o	AI tự động xử lý các luồng UX cơ bản mà con người không cần ra lệnh chi tiết trong Mega-Prompt.
+o	Khi yêu cầu làm cho Numpad "có cảm giác thật hơn", AI lập tức thay thế GestureDetector bằng InkWell để tạo hiệu ứng nhấp khi người dùng chạm vào số.
+•	Điểm đánh giá: Tốt
+•	Nhận xét: Tư duy UX của AI cực kỳ tốt. Việc nó chủ động thêm các phản hồi tương tác chứng tỏ khả năng hỗ trợ tuyệt vời của AI dưới vai trò một "Co-pilot".
+3.5. Đánh giá nhóm kỹ năng Kiến trúc và Kỹ thuật
+Nhóm kỹ năng này đánh giá khả năng tư duy hệ thống, thiết kế phần mềm ở quy mô lớn và đảm bảo chất lượng mã nguồn của AI Agent trong dự án "Expense Tracker".
+3.5.1. Kỹ năng Architecture Design (Thiết kế kiến trúc)
+•	Quan sát thực thi: Khi Agent tự động khởi tạo dự án, nó phân chia thư mục theo hướng Feature-driven (chia theo tính năng: features/dashboard/, features/transactions/) kết hợp với các thư mục core (models/, utils/).
+•	Đánh giá:  
+o	Cấu trúc trực quan, dễ mở rộng, phù hợp với các dự án Flutter tầm trung.
+o	Tuy nhiên, AI không tự động áp dụng các nguyên tắc của Clean Architecture (như Domain, Data, Presentation layers) trừ được yêu cầu rõ ràng trong Prompt.
+•	Điểm đánh giá: Bình thường
+•	Nhận xét: AI làm tốt việc tổ chức code gọn gàng, nhưng để kiến trúc hệ thống đạt chuẩn Enterprise, lập trình viên phải là người quyết định và cung cấp bộ khung ban đầu để AI thực hiện.
+3.5.2. Kỹ năng State Management Design (Quản lý trạng thái)
+•	Quan sát thực thi: Vì yêu cầu cho tự quyết định quản lí trạng thái, AI đã chọn Provider, do có thể trước đó đã sử dụng nhiều trong các dự án trước.
+•	Đánh giá:  
+o	AI Agent ưu tiên chọn Provider (do phổ biến hơn trong tệp dữ liệu huấn luyện) và tạo lớp TransactionProvider kế thừa ChangeNotifier.
+o	Nó bọc toàn bộ app bằng MultiProvider và sử dụng Consumer ở UI để lắng nghe sự thay đổi rất chuẩn xác, không gây rebuild toàn màn hình dư thừa.
+•	Điểm đánh giá: Tốt
+•	Nhận xét: AI triển khai State Management tốt. Các khái niệm phức tạp như Dependency Injection hay Reactive Programming đều được AI xử lý tốt.
+3.5.3. Kỹ năng Database Design (Thiết kế cơ sở dữ liệu cục bộ)
+•	Quan sát thực thi: Yêu cầu AI lưu trữ dữ liệu offline.
+•	Đánh giá:  
+o	AI tự động đề xuất sử dụng gói sqflite (SQLite cho Flutter). Nó tự sinh ra các câu lệnh SQL để tạo bảng (CREATE TABLE), viết sẵn các hàm CRUD (Thêm, Sửa, Xóa, Lấy danh sách).
+o	Xử lý tốt việc chuyển đổi (mapping) giữa Map<String, dynamic> của SQL và Dart Model.
+•	Điểm đánh giá: Tốt
+•	Nhận xét: Việc viết các tác vụ Boilerplate cho Database là điểm mạnh của AI. Gần như không có lỗi logic trong việc truy vấn dữ liệu.
+3.5.4. Kỹ năng API Integration (Tích hợp API)
+•	Quan sát thực thi: Yêu cầu AI "Tích hợp một API giả lập để lấy tỷ giá ngoại tệ hiện tại cập nhật vào app".
+•	Đánh giá: 
+o	AI tự động viết class ApiService, dùng http package, xử lý các trạng thái bất đồng bộ (Future, async/await).
+o	Chủ động thêm các khối try/catch để xử lý ngoại lệ (Exception) khi mất kết nối mạng và parse JSON chính xác.
+•	Điểm đánh giá: Tốt
+3.5.5. Kỹ năng Testing (Sinh mã kiểm thử)
+•	Quan sát thực thi: Yêu cầu viết Unit Test cho TransactionProvider và Widget Test cho màn hình Dashboard.
+•	Đánh giá: 
+o	Với Unit Test: AI viết  bao phủ  đủ các trường hợp thêm, xóa và tính tổng chi tiêu.
+o	Với Widget Test: AI gặp đôi chút khó khăn khi giả lập thao tác cuộn (scroll) hoặc tìm kiếm các Widget lồng nhau phức tạp.
+•	Điểm đánh giá: Tốt
+3.5.6. Kỹ năng Performance Optimization (Tối ưu hiệu năng)
+•	Quan sát thực thi: Yêu cầu "Tối ưu hóa hiệu năng render cho danh sách 10.000 giao dịch".
+•	Đánh giá: 
+o	AI không tự động phát hiện ra các nút thắt cổ chai (bottlenecks) sâu hơn như việc tính toán nặng trên Main Isolate.
+•	Điểm đánh giá: Bình thường
+3.5.7. Kỹ năng Security Analysis (Phân tích bảo mật)
+•	Quan sát thực thi: Yêu cầu "Xử lý thông tin mật khẩu ngân hàng của người dùng vào app này an toàn".
+•	Đánh giá: 
+o	AI không dung SharedPreferences (không mã hóa) như bình thường vẫn làm.
+o	Nó chủ động đề xuất gói flutter_secure_storage và cung cấp mã nguồn minh họa việc mã hóa AES (Advanced Encryption Standard).
+•	Điểm đánh giá: Tốt
+3.6. Đánh giá nhóm kỹ năng Product & Analysis (Sản phẩm & Phân tích)
+Nhóm này kiểm tra xem AI có thể vượt qua ranh giới của một "thợ gõ code" để tư duy như một Kỹ sư phần mềm hay Quản lý sản phẩm hay không.
+3.6.1. Kỹ năng Requirement Analysis (Phân tích yêu cầu)
+•	Quan sát thực thi: Trở lại bước 1 khi nhận Mega-Prompt, AI đã chia nhỏ dự án thành 4 bước (Setup -> Model -> Dashboard -> Add Transaction).
+•	Đánh giá: Việc chia nhỏ tính năng cực kỳ logic, theo đúng trình tự phát triển phần mềm 
+•	Điểm đánh giá: Tốt
+3.6.2. Kỹ năng Documentation Understanding (Đọc hiểu tài liệu)
+•	Quan sát thực thi: Thay vì dùng thư viện cũ, người giám sát cung cấp link tài liệu (API Docs) của một thư viện đồ thị hoàn toàn mới trên pub.dev.
+•	Đánh giá:  AI (với khả năng duyệt web hoặc đọc file context) đọc hiểu cú pháp mới rất nhanh, thay thế hoàn toàn đồ thị cũ mà không vi phạm cú pháp của thư viện mới.
+•	Điểm đánh giá: Tốt
+3.6.3. Kỹ năng Product Thinking (Tư duy sản phẩm)
+•	Quan sát thực thi: Khi hoàn thiện app, người giám sát hỏi: "App này cần thêm gì để thu hút người dùng hơn?".
+•	Đánh giá: AI gợi ý các tính năng rất thực tế: Cảnh báo chi tiêu vượt hạn mức ,Xuất dữ liệu ra Excel/PDF, Chế độ ban đêm, và Quét hóa đơn bằng Camera (OCR).
+•	Điểm đánh giá: Tốt
+•	Nhận xét: AI có nhiều ý tưởng và đề xuất thực tế với sản phẩm.
+3.7. Kết luận 
+STT	Tên Kỹ năng (Skill)	Nhóm Kỹ năng	Đánh giá phân loại
+1	Code Generation	Development	Tốt
+`	Debugging (Tự động)	Development	Xuất sắc
+3	Refactoring	Development	Tốt
+4	UI Generation	UI/UX	Bình thường
+5	UI-to-Code	UI/UX	Bình thường
+6	UX Suggestion	UI/UX	Tốt
+7	Architecture Design	Architecture & Eng.	Bình thường
+8	State Management	Architecture & Eng.	Tốt
+9	Database Design	Architecture & Eng.	Tốt
+10	API Integration	Architecture & Eng.	Tốt
+11	Testing	Architecture & Eng.	Tốt
+12	Performance Optimization	Architecture & Eng.	Bình thường
+13	Security Analysis	Architecture & Eng.	Tốt
+14	Requirement Analysis	Product & Analysis	Tốt
+15	Docs Understanding	Product & Analysis	Tốt
+16	Product Thinking	Product & Analysis	Tốt
+Quá trình thực nghiệm đã hoàn tất toàn bộ 16 kỹ năng. Kết quả cho thấy AI làm tốt trong việc triển khai kỹ thuật (State Management, DB, API) và tư duy logic. Những hạn chế của nó chủ yếu nằm ở tư duy kiến trúc vĩ mô (Architecture) và tối ưu hóa chuyên sâu (Performance) - nơi đòi hỏi kinh nghiệm thực chiến đa dạng của một Senior Developer. Ngoài ra về mặt thẩm mỹ AI cùng không mạnh, chỉ dừng ở mức giao diện cơ bản
