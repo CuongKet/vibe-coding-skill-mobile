@@ -1,0 +1,63 @@
+CHƯƠNG 5: TỐI ƯU AI CODING VỚI AGENT SKILL
+Agent Skills là các bộ quy tắc, hướng dẫn và cấu hình chuyên biệt được thiết kế cho các AI
+Agent (như Claude, GPT-4 thông qua Model Context Protocol - MCP). Thay vì chỉ đưa ra gợi
+ý code chung chung, Agent Skills dạy cho AI cách "suy nghĩ", cách sử dụng công cụ và tuân
+thủ các quy trình chuẩn khi thực hiện một tác vụ cụ thể trong hệ sinh thái Flutter. Điều này có nghĩa là, 
+các điểm yếu của Agent sẽ được cải thiện bằng chính skill do người lập trình viết ra.
+
+Trong quá trình phát triển các hệ thống thương mại, việc sử dụng skill sẽ giúp đầu ra chất lượng hơn, giảm công sức
+của con người tham gia vào quá trình vibe. Tác giả xin giới thiệu một số bộ skill mà tác giả dùng khi phát triển.
+Đây là bộ skill chính chủ do đội ngũ FLutter viết. Nguồn: https://github.com/flutter/skills/tree/main/skills/.
+5.1. flutter-apply-architecture-best-practices
+Kỹ năng này ép buộc AI Agent thiết kế và tái cấu trúc (refactor) mã nguồn ứng dụng theo các mô
+hình kiến trúc phân lớp được khuyến nghị, chẳng hạn như Clean Architecture (Data, Domain,
+Presentation) hoặc BLoC pattern.
+Mục đích sử dụng: Khi bạn khởi tạo một cấu trúc dự án mới hoặc cần chuẩn hóa lại
+đoạn code spaghetti thành các module rõ ràng. Tránh việc AI tùy tiện viết logic nghiệp vụ
+chung với UI (Widget).
+Cơ chế hoạt động: Skill sẽ cung cấp cho agent các quy luật ngặt nghèo về việc tách
+biệt trạng thái (state transitions), giao tiếp ngoại vi (HTTP, Storage) và hiển thị giao diện.
+Ví dụ Prompt cho AI: "Refactor luồng đăng nhập (authentication flow) trong ứng dụng theo đúng
+kiến trúc phân lớp chuẩn được khuyến nghị."
+5.2. flutter-setup-declarative-routing
+Việc xử lý điều hướng URL và Deep Link luôn là thử thách, đặc biệt khi build Flutter cho Web.
+Skill này dạy AI cách thiết lập và cấu trúc MaterialApp.router sử dụng các thư viện như
+go_router.
+Mục đích sử dụng: Cấu hình hệ thống route với các trang phức tạp, sub-route, hoặc khi
+cần xử lý lịch sử duyệt web và xác thực (auth guards).
+Cơ chế hoạt động: Đảm bảo AI tạo ra các class Route được định nghĩa kiểu (type-safe)
+và tuân thủ mô hình khai báo (declarative) thay vì sử dụng Navigator.push truyền
+thống.
+Ví dụ Prompt cho AI: "Hãy thiết lập GoRouter cho dự án này, bao gồm các đường dẫn cho trang
+chủ, chi tiết sản phẩm và trang cài đặt có bảo vệ quyền truy cập."
+5.3. flutter-build-responsive-layout
+Đây là "phao cứu sinh" cho các lỗi giao diện của Flutter như "RenderFlex overflowed"
+hay "Vertical viewport was given unbounded height" hay các giao diện hoạt động trên đa thiết bị.
+Mục đích sử dụng: Giúp AI xây dựng giao diện thích ứng trên cả Mobile,
+Tablet, và Desktop. Nó cũng được kích hoạt để sửa lỗi tràn màn hình tự động.
+Cơ chế hoạt động: Skill hướng dẫn AI ưu tiên sử dụng LayoutBuilder,
+MediaQuery, hoặc các widget như Expanded / Flexible một cách hợp lý và an toàn
+thay vì fix cứng kích thước.
+Ví dụ Prompt cho AI: "Sửa lỗi tràn layout (overflow) ở trang hồ sơ cá nhân khi bàn phím ảo hiển
+thị và đảm bảo giao diện responsive."
+5.4. flutter-add-integration-test
+Kiểm thử tự động luôn tiêu tốn thời gian. Kỹ năng này cho phép AI cấu hình
+integration_test và tự động viết các kịch bản kiểm tra giao diện đầu cuối (end-to-end).
+Mục đích sử dụng: Khi cần đảm bảo ứng dụng hoạt động ổn định trên thiết bị thực tế.
+Cơ chế hoạt động: Chuyển đổi các hành động mà AI vừa thực hiện (thông qua MCP)
+thành các kịch bản kiểm thử vĩnh viễn trong mã nguồn. Điều này biến AI thành một QA
+Engineer thực thụ.
+Ví dụ Prompt cho AI: "Thêm một integration test tự động chạy và xác thực toàn bộ trải nghiệm
+thanh toán giỏ hàng (checkout flow)."
+
+Trên đây một vài skill thường được dùng khi phát triển phần mềm bằng Flutter. Việc ứng dụng các skill mang lại hai lợi ích lớn lao cho các dự án phần mềm
+chuyên nghiệp:
++ Chống "Drift" Kiến Trúc: AI nếu không có hướng dẫn sẽ thường chọn cách giải quyết ngắn
+nhất, dẫn đến kiến trúc rác. Các kỹ năng như một "người gác cổng", đảm bảo code sinh ra
+luôn tuân thủ chính sách kỹ thuật của đội nhóm.
++ Tiết Kiệm Token và Tăng Độ Chính Xác: Thay vì phải truyền vào ngữ cảnh (context) dài
+dòng về quy định code cho mỗi lần chat, Agent Skills hoạt động ngầm định ở mức local
+(IDE). AI đọc các file SKILL.md khi cần và áp dụng chính xác các thư viện mới nhất.
+
+Sự ra đời của Skills cải thiện chất lượng code từ AI, giảm tác động của con người vào quá trình mà kết
+quả đầu ra  cũng tốt hơn.
