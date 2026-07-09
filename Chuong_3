@@ -5,7 +5,32 @@ Từ quá trình thực thi này, nghiên cứu sẽ bóc tách và đánh giá 
 Dự án yêu cầu: Xây dựng trò chơi Kurodoko bằng Flutter: 
 > "Create a Flutter project, run on iOS and Android, in the  /Users/mac/Downloads/project folder. Name it kurodoko, and set the domain to dev.ninetyeightdev.kurodoko. Using the algorithm you just created, develop a preliminary application: require one level selection screen (5x5, 7x7, 10x10, 15x15, 20x20); one gameplay screen; use Riverpod, MVVM, and Clean Architect."
 Quá trình AI Agent lên Plan (Kế hoạch thực thi): Ngay sau khi nhận prompt, AI Agent bắt đầu lên kế hoạch thực hiện gồm 7 nhiệm vụ:
-[Ảnh đính kèm]
+Overview
+Task
+Kurodoko App Development
+ Project Setup
+   Run flutter create with correct org and name.
+   Add dependencies: flutter_riverpod, freezed, freezed_annotation, build_runner.
+ Clean Architecture Setup
+   Create folder structure (domain, data, presentation).
+   Integrate previously created Kurodoko algorithm.
+ MVVM & Riverpod Setup
+   Create view models for level selection and gameplay.
+   Provide state management.
+ UI Implementation
+   Level Selection Screen (5x5, 7x7, 10x10, 15x15, 20x20).
+   Gameplay Screen (dynamic board based on selection).
+ Game Screen Enhancements
+   New game feature with current grid size.
+   Give up feature (show solution).
+   Game timer functionality.
+   Pause and resume the game timer.
+ UI Revamp (Kakurasu Reference)
+   Investigate /Volumes/Project/Flutter/personal/kakurasu_puzzle for UI style.
+   Rebuild Home (Top) screen.
+   Build Victory screen/dialog.
+   Separate Top Screen from Selection Screen navigation.
+ Final Review and Verification
 3.2. Đánh giá nhóm kỹ năng Development qua quá trình thực thi
 3.2.1. Kỹ năng Code Generation (Sinh mã nguồn)
 •	Quan sát thực thi: Dựa trên kế hoạch, AI đã sinh cấu trúc dự án, tạo các tệp models, giao diện và chức năng màn gameplay, chọn mức chơi, thuật toán chính của trò chơi. Thuật toán trước đó được yêu cầu thực hiện bằng cách cào dữ liệu từ một trang web trò chơi tương tự.
