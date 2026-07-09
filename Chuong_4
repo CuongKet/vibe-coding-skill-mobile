@@ -16,19 +16,19 @@ Dựa trên kết quả thực nghiệm 16 kỹ năng trong dự án Kurodoko", 
 •	Architecture Design: AI có xu hướng chọn kiến trúc phẳng hoặc lộn xộn nếu không được ép buộc bằng các prompt thiết kế hệ thống khắt khe.
 •	Performance Optimization: Khó phát hiện các nút thắt cổ chai (bottlenecks) sâu trong hệ thống Render của Flutter.
 4.2. Xây dựng AI Skill Map for Mobile Development
-Từ việc phân loại trên, nghiên cứu xây dựng AI Skill Map cho lĩnh vực Mobile Development. Bản đồ này được chia thành 4 góc phần tư tương ứng với 4 nhóm kỹ năng:
-•	Góc phần tư 1 - Lõi Kỹ thuật (ĐIỂM SÁNG): AI bao phủ gần như toàn bộ (Logic, Data, API, Testing, Debugging). Đây là "vùng an toàn" nhất để giao phó 100% công việc cho AI.
-•	Góc phần tư 2 - Tư duy Sản phẩm (ĐIỂM SÁNG): AI hoạt động như một Product Manager/Business Analyst xuất sắc, giúp lập trình viên mở rộng tính năng và hiểu rành mạch yêu cầu dự án.
-•	Góc phần tư 3 - Kiến trúc & Tối ưu (ĐIỂM MỜ): AI chưa thể tự hoạch định một kiến trúc linh hoạt cho dự án quy mô lớn. Vai trò của lập trình viên ở đây là không thể thay thế.
-•	Góc phần tư 4 - Thị giác & Trải nghiệm (ĐIỂM MỜ): Dù giỏi gợi ý UX, nhưng khả năng "vẽ" UI  sao cho đẹp và chuẩn thiết kế vẫn là điểm yếu cố hữu của LLMs hiện tại do bản chất chúng là mô hình ngôn ngữ , không phải mô hình không gian.
+Từ việc phân loại trên, nghiên cứu xây dựng AI Skill Map cho lĩnh vực Mobile Development. Bản đồ với 4 nhóm kỹ năng:
+•	Lõi Kỹ thuật (ĐIỂM SÁNG): AI bao phủ gần như toàn bộ (Logic, Data, API, Testing, Debugging). Đây là "vùng an toàn" nhất để giao phó 100% công việc cho AI.
+•	Tư duy Sản phẩm (ĐIỂM SÁNG): AI hoạt động như một Product Manager/Business Analyst xuất sắc, giúp lập trình viên mở rộng tính năng và hiểu rành mạch yêu cầu dự án.
+•	Kiến trúc & Tối ưu (ĐIỂM MỜ): AI chưa thể tự hoạch định một kiến trúc linh hoạt cho dự án quy mô lớn. Vai trò của lập trình viên ở đây là không thể thay thế.
+•	Thị giác & Trải nghiệm (ĐIỂM MỜ): Dù giỏi gợi ý UX, nhưng khả năng "vẽ" UI  sao cho đẹp và chuẩn thiết kế vẫn là điểm yếu cố hữu của LLMs hiện tại do bản chất chúng là mô hình ngôn ngữ, không phải mô hình không gian.
 4.3. So sánh AI với Mobile Developer (Human vs. AI)
-|Tiêu chí|AI Coding Agent	Mobile Developer                   |(Con người)	              |Phân tích lợi thế
-|---|---|---|---|
-|Tốc độ sinh mã 	          |Tính bằng giây cho hàng trăm dòng code.	             |Tính bằng giờ/ngày.	    |AI làm tốt hơn ở việc viết Boilerplate code và logic tiêu chuẩn.
-|Gỡ lỗi (Debugging)	        |Đọc Terminal và khoanh vùng lỗi tức thì.	          |Cần thời gian mò mẫm, tra cứu StackOverflow.	|AI làm tốt hơn, đặc biệt với các lỗi cú pháp và State.
-|Thiết kế giao diện (UI)	  |Thô cứng, cần điều chỉnh nhiều, khó Pixel-perfect.	|Nhạy cảm với thẩm mỹ, chuẩn xác với Figma.	|Con người làm tốt hơn nhờ cảm quan không gian và thẩm mỹ.
-|Kiến trúc	Chỉ tốt ở phạm vi file nhỏ (Context window giới hạn).	|Hiểu toàn bộ hệ sinh thái dự án lớn, lường trước rủi ro mở rộng.	|Con người làm tốt trong vai trò Kỹ sư trưởng.
-|Khả năng bảo trì	|Dễ sinh ra mã rác nếu prompt sai.	|Có tính nhất quán cao, tuân thủ convention đội nhóm.	Con người hơn. |AI cần được giám sát sát sao.
+|Tiêu chí                   |AI Coding Agent	Mobile Developer                            |(Con người)	                                                          |Phân tích lợi thế
+|---------------------------|-------------------------------------------------------------|-----------------------------------------------------------------------|----------------------------------------------------------------
+|Tốc độ sinh mã 	          |Tính bằng giây cho hàng trăm dòng code.	                    |Tính bằng giờ/ngày.	                                                  |AI làm tốt hơn ở việc viết Boilerplate code và logic tiêu chuẩn.
+|Gỡ lỗi (Debugging)	        |Đọc Terminal và khoanh vùng lỗi tức thì.	                    |Cần thời gian mò mẫm, tra cứu StackOverflow.	                          |AI làm tốt hơn, đặc biệt với các lỗi cú pháp và State.
+|Thiết kế giao diện (UI)	  |Thô cứng, cần điều chỉnh nhiều, khó Pixel-perfect.	          |Nhạy cảm với thẩm mỹ, chuẩn xác với Figma.	                            |Con người làm tốt hơn nhờ cảm quan không gian và thẩm mỹ.
+|Kiến trúc	                |Chỉ tốt ở phạm vi file nhỏ (Context window giới hạn).	      |Hiểu toàn bộ hệ sinh thái dự án lớn, lường trước rủi ro mở rộng.	      |Con người làm tốt trong vai trò Kỹ sư trưởng.
+|Khả năng bảo trì	          |Dễ sinh ra mã rác nếu prompt sai.	                          |Có tính nhất quán cao, tuân thủ convention đội nhóm.	Con người hơn.    |AI cần được giám sát sát sao.
 4.4. Đề xuất Mô hình Cộng tác Con người - AI
 Dựa trên sự bù trừ giữa điểm mạnh/điểm yếu của AI và Con người, đề tài đề xuất  Mô hình "Lập trình cặp bất đối xứng" theo phương pháp Vibe Coding.
 Trong mô hình này:
