@@ -11,6 +11,8 @@
 
 5.Mô hình Human-AI Collaboration nào phù hợp cho Mobile Development?
 
+6. Giới thiệu một số Skill sử dụng trong phát triển phần mềm bằng FLutter
+
 ### Mục tiêu
 
 Nghiên cứu khả năng của các mô hình AI khi tham gia vào quy trình phát triển ứng dụng di động bằng Flutter dưới vai trò một Mobile Developer ảo. Thông qua các bài thực nghiệm thực tế, đề tài hướng đến việc xác định các nhóm kỹ năng AI đang sở hữu, đánh giá mức độ hiệu quả của từng kỹ năng, đồng thời đề xuất mô hình cộng tác giữa con người và AI trong phát triển ứng dụng di động.
@@ -45,7 +47,7 @@ Các nhóm kỹ năng được khảo sát bao gồm:
 | 1   | Tuần 1 | Tìm hiểu cơ sở lý thuyết về AI Coding Assistant, Vibe Coding, Flutter Development; xây dựng AI Skill Framework; thiết kế bộ tiêu chí đánh giá và bộ bài thực nghiệm | Chương 1, Chương 2; AI Skill Framework; Bộ tiêu chí đánh giá; Danh sách bài thực nghiệm                                                                                                                                      | Hoàn thành khung nghiên cứu và phương pháp đánh giá |
 | 2   | Tuần 2 | Thực nghiệm nhóm kỹ năng Development và UI/UX; thu thập kết quả và đánh giá                                                                                         | Dữ liệu thực nghiệm cho các kỹ năng Code Generation, Debugging, Refactoring, UI Generation, UI-to-Code, UX Suggestion                                                                                                        | Hoàn thành khoảng 50% dữ liệu nghiên cứu            |
 | 3   | Tuần 3 | Thực nghiệm nhóm kỹ năng Architecture, Engineering và Product Skills; tổng hợp kết quả                                                                              | Dữ liệu thực nghiệm cho Architecture Design, State Management, Database Design, API Integration, Testing, Performance Optimization, Security Analysis, Requirement Analysis, Documentation Understanding và Product Thinking | Hoàn thành toàn bộ dữ liệu nghiên cứu               |
-| 4   | Tuần 4 | Phân tích dữ liệu, xây dựng AI Skill Map, so sánh AI với Mobile Developer, hoàn thiện báo cáo và slide bảo vệ                                                       | AI Skill Map for Mobile Development; Báo cáo hoàn chỉnh; Slide trình bày                                                                                                                                                     | Hoàn thành báo cáo và chuẩn bị bảo vệ               |
+| 4   | Tuần 4 | Phân tích dữ liệu, xây dựng AI Skill Map, so sánh AI với Mobile Developer, giới thiệu skill, hoàn thiện báo cáo                                                       | AI Skill Map for Mobile Development; Báo cáo hoàn chỉnh; Slide trình bày                                                                                                                                                     | Hoàn thành báo cáo              |
 
 ---
 
@@ -143,6 +145,7 @@ Các nhóm kỹ năng được khảo sát bao gồm:
 * Xây dựng AI Skill Map for Mobile Development.
 * So sánh AI với Mobile Developer.
 * Đề xuất mô hình Human-AI Collaboration.
+* Giới thiệu skill
 * Hoàn thiện báo cáo thực tập.
 * Thiết kế slide trình bày kết quả nghiên cứu.
 
@@ -151,7 +154,7 @@ Các nhóm kỹ năng được khảo sát bao gồm:
 * AI Skill Map for Mobile Development.
 * Human-AI Collaboration Model.
 * Báo cáo thực tập hoàn chỉnh.
-* Slide bảo vệ thực tập.
+* Slide bảo vệ.
 
 #### Mốc cần đạt
 
